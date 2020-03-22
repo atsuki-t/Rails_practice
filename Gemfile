@@ -31,6 +31,7 @@ gem 'bootstrap', '>= 4.0.0.beta2.1'
 gem 'jquery-rails'
 gem 'popper_js', '>= 1.12.3'
 gem 'tether-rails'
+gem 'solargraph'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
