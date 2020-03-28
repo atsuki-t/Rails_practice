@@ -1,0 +1,15 @@
+<h1>ユーザー編集</h1>
+
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :user_name,"ユーザーネーム" %>
+    <%= f.text_field :user_name %>
+  </p>
+  <p>
+    <%= f.label :email,"メールアドレス" %>
+    <%= f.text_field :email %>
+  </p>
+  <%= f.submit '更新'%>
+<% end %>
+
+<button><%= link_to "戻る", user_path(@user.id) %></button>

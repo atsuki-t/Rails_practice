@@ -1,5 +1,7 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.user_name %>のマイページ</h1>
 
 <hr>
-<p><span>email: </span><%= @user.email %></p>
+<p><span>ユーザーネーム: </span><%= @user.user_name %></p>
+<p><span>メールアドレス: </span><%= @user.email %></p>
+
+<button><%= link_to "編集", edit_user_path(@user.id) %></button>

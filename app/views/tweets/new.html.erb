@@ -1,10 +1,15 @@
-<h1>Tweets#new</h1>
-<p>Find me in app/views/tweets/new.html.erb</p>
+<h1>新規ツイート作成</h1>
 
-<% form_for @tweet do |f| %>
+<%= form_for @tweet do |f| %>
+  <p>
+    <%= f.label :title,"タイトル" %>
+    <%= f.text_field :title %>
+  </p>
   <p>
     <%= f.label :body,"ツイート" %>
     <%= f.text_field :body %>
   </p>
-  <%= f.submit %>
+  <%= f.submit "新規作成"%>
 <% end %>
+
+<button><%= link_to "戻る", tweets_path %></button>
