@@ -1,0 +1,15 @@
+<h1>ツイート編集</h1>
+
+<%= form_for @tweet do |f| %>
+  <p>
+    <%= f.label :title,"タイトル" %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body,"ツイート" %>
+    <%= f.text_field :body %>
+  </p>
+  <%= f.submit '更新'%>
+<% end %>
+
+<button><%= link_to "戻る", tweets_path %></button>

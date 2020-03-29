@@ -1,0 +1,7 @@
+<h1><%= @user.user_name %>のマイページ</h1>
+
+<hr>
+<p><span>ユーザーネーム: </span><%= @user.user_name %></p>
+<p><span>メールアドレス: </span><%= @user.email %></p>
+
+<button><%= link_to "編集", edit_user_path(@user.id) %></button>

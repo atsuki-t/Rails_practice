@@ -1,0 +1,9 @@
+<h1>ユーザー一覧</h1>
+<hr>
+<p><%= @user %>でログインしています。</p>
+<% @users.each do |user| %>
+  <hr>
+  <p><span>ユーザーネーム: </span><%= user.user_name %></p>
+  <p><span>メールアドレス: </span><%= user.email %></p>
+  <button><%= link_to "詳細", user_path(user.id) %></button>
+<% end %>
