@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   def new
-    @tweet = Tweet.new # 新規投稿用の空のインスタンス
+    @tweet = Tweet.new
   end
 
   def show

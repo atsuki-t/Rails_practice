@@ -1,16 +1,17 @@
 # == Schema Information
 #
-# Table name: tweets
+# Table name: comments
 #
 #  id         :bigint           not null, primary key
-#  body       :string(255)
-#  title      :string(255)
+#  content    :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  tweet_id   :integer
 #  user_id    :integer
 #
-class Tweet < ApplicationRecord
+class Comment < ApplicationRecord
   belongs_to :user
+  belongs_to :tweet, optional: true
 
-  has_many :comments
+  validates :content, presence: true
 end

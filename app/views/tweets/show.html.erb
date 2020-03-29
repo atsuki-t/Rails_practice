@@ -1,5 +1,11 @@
 <h1>ツイート内容</h1>
 
-<p><span>ユーザー: </span><%= @user.email %></p>
+<p><span>投稿者: </span><%= link_to @user.user_name, user_path(@user.id) %></p>
 <p><span>タイトル: </span><%= @tweet.title %></p>
 <p><span>ツイート内容: </span><%= @tweet.body %></p>
+<button><%= link_to "コメントする", new_tweet_comment_path(@tweet.id) %></button>
+
+<% @tweet.comments.each do |comment| %>
+  <th>
+  <p><span>コメント: </span><%= comment.content %></p>
+<% end %>
