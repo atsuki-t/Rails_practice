@@ -11,6 +11,7 @@
 #
 class Tweet < ApplicationRecord
   belongs_to :user
+  belongs_to :comment
 
-  has_many :comments
+  has_many :comments, dependent: :destroy, inverse_of: :tweet
 end

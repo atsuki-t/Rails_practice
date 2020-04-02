@@ -1,6 +1,6 @@
 <h1>コメント作成</h1>
 
-<%= form_for [@tweet, @comment], url: tweet_comments_path do |f| %>
+<%= form_for [@tweet, @comment] do |f| %>
   <p>
     <%= f.label :content,"内容" %>
     <%= f.text_field :content %>

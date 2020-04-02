@@ -4,14 +4,17 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
+  def index
+    @tweet = Tweet.find(params[:tweet_id])
+    @comments = Tweet.find(params[:tweet_id])
+  end
+
   def edit
     @comment = Comment.find(params[:id])
   end
 
   def create
-    @tweet = Tweet.find(params[:tweet_id])
-    @comment = @tweet.comments.create(comment_params)
-    @comment.save
+    Comment.create(comment_params)
     redirect_to tweets_path
   end
 
@@ -21,6 +24,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content).merge(tweet_id: params[:tweet_id])
   end
 end
