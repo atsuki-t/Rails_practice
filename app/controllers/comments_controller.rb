@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @tweet = Tweet.find(params[:tweet_id])
     @comment = Comment.find(params[:id])
   end
 
@@ -15,7 +16,18 @@ class CommentsController < ApplicationController
     redirect_to tweet_path(@tweet)
   end
 
+  def update
+    @tweet = Tweet.find(params[:tweet_id])
+    @comment = Comment.find(params[:id])
+    @tweet.comments.update(comment_params)
+    redirect_to tweet_path(@tweet)
+  end
+
   def destroy
+    @tweet = Tweet.find(params[:tweet_id])
+    @comment = Comment.find(params[:id])
+    @tweet.comments.destroy
+    redirect_to tweet_path(@tweet)
   end
 
   private
