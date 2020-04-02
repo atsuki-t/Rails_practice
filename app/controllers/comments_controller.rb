@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    Comment.create(comment_params)
+    Comment.create!(comment_params)
     redirect_to tweets_path
   end
 

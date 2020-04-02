@@ -17,7 +17,6 @@
       <button><%= link_to "マイページ", user_path(current_user.id) %></button>
     <% else %>
       <button><%= link_to "新規登録", new_user_registration_path %></button>
-      <button><%= link_to "新規投稿", new_tweet_path %></button>
       <button><%= link_to "ログイン", new_user_session_path %></button>
     <% end %>
       <button><%= link_to "ツイート一覧", tweets_path %></button>
