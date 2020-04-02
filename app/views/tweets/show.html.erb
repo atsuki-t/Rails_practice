@@ -6,6 +6,6 @@
 <button><%= link_to "コメントする", new_tweet_comment_path(@tweet.id) %></button>
 
 <% @tweet.comments.each do |comment| %>
-  <th>
+  <hr>
   <p><span>コメント: </span><%= comment.content %></p>
 <% end %>
