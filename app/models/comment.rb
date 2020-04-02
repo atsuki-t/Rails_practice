@@ -10,9 +10,9 @@
 #  user_id    :integer
 #
 class Comment < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :tweet, optional: true
-  has_many :tweets
+  # has_many :tweets
 
   validates :content, presence: true
 end

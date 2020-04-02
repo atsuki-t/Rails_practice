@@ -10,8 +10,8 @@
 #  user_id    :integer
 #
 class Tweet < ApplicationRecord
-  belongs_to :user
-  belongs_to :comment
+  belongs_to :user, optional: true
+  # belongs_to :comment
 
   has_many :comments, dependent: :destroy, inverse_of: :tweet
 end
