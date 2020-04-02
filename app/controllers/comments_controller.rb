@@ -4,9 +4,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  def show
+  def index
     @tweet = Tweet.find(params[:tweet_id])
-    @comment = Comment.find(params[:id])
+    @comments = Tweet.find(params[:tweet_id])
   end
 
   def edit
