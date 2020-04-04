@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    @user = if User.respond_to?(:user_name)
+    @user = if user_signed_in?
               current_user.user_name
             else
               'ゲスト'
