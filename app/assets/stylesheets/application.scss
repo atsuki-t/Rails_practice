@@ -7,12 +7,23 @@
     font-size: 18px;
   }
 }
-.main {
-  padding: 30px;
-}
 button {
   margin-top: 10px;
+  margin-left: 10px;
   a {
     color: black;
+  }
+}
+.main {
+  padding: 30px;
+  button {
+    margin-top: 10px;
+    margin-left: 0;
+    a {
+      color: black;
+    }
+  }
+  .error_message {
+    color: red;
   }
 }
