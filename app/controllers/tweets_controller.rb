@@ -14,6 +14,8 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(tweet_params)
+    # user_id が正しく取得できていない不具合あり
+    # 現在は optional: true で対処している
     @tweet.user_id = current_user.id
     @tweet.save
     redirect_to tweets_path

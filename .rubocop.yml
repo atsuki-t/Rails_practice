@@ -1,0 +1,30 @@
+# "Missing top-level class documentation comment."を無効
+Style/Documentation:
+  Enabled: false
+
+# "Prefer single-quoted strings when you don't need string interpolation or special symbols."を無効
+Style/StringLiterals:
+  Enabled: false
+
+# 列の長さを気にするか
+# "Line is too long"を無効
+Metrics/LineLength:
+  Enabled: false
+
+# "Missing frozen string literal comment."を無効
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# 日本語のコメントを許可するか
+# "Use only ascii symbols in comments."を無効
+Style/AsciiComments:
+  Enabled: false
+
+# メソッドの行数の長さ
+MethodLength:
+  CountComments: false  # コメントをカウントするか
+  Max: 30  # 最大行数
+
+# 1ブロックあたりの行数の長さ
+Metrics/BlockLength:
+  Max: 50  # 最大行数

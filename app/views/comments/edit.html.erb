@@ -1,0 +1,9 @@
+<h1>コメントの編集</h1>
+
+<%= form_for [@tweet, @comment], url: tweet_comment_path do |f| %>
+  <p>
+    <%= f.label :content,"内容" %>
+    <%= f.text_field :content %>
+  </p>
+  <%= f.submit "更新" %>
+<% end %>

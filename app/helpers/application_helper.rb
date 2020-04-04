@@ -1,5 +1,5 @@
 module ApplicationHelper
-  APP_NAME = 'Rails Apprication'
+  APP_NAME = 'Rails Apprication'.freeze
 
   def flash_message(message, klass)
     content_tag(:div, class: "alert-#{klass}") do

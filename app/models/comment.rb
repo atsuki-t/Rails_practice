@@ -11,8 +11,7 @@
 #
 class Comment < ApplicationRecord
   belongs_to :user, optional: true
-  belongs_to :tweet, optional: true
-  # has_many :tweets
+  belongs_to :tweet
 
   validates :content, presence: true
 end

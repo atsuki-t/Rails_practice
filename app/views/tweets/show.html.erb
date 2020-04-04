@@ -3,9 +3,12 @@
 <p><span>投稿者: </span><%= link_to @user.user_name, user_path(@user.id) %></p>
 <p><span>タイトル: </span><%= @tweet.title %></p>
 <p><span>ツイート内容: </span><%= @tweet.body %></p>
-<button><%= link_to "コメントする", new_tweet_comment_path(@tweet.id) %></button>
+<button><%= link_to "コメントする", new_tweet_comment_path(@tweet) %></button>
 
 <% @tweet.comments.each do |comment| %>
-  <th>
+  <hr>
+  <p><span>ID: </span><%= comment.id %></p>
   <p><span>コメント: </span><%= comment.content %></p>
+  <button><%= link_to "編集", edit_tweet_comment_path(@tweet, comment.id) %></button>
+  <button><%= link_to "削除", tweet_comment_path(@tweet, comment.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
 <% end %>

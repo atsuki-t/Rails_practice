@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    @user = current_user.user_name
+    @user = if user_signed_in?
+              current_user.user_name
+            else
+              'ゲスト'
+            end
   end
 
   def show
@@ -19,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:email, :user_name)
   end
