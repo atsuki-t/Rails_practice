@@ -19,14 +19,14 @@ class CommentsController < ApplicationController
   def update
     @tweet = Tweet.find(params[:tweet_id])
     @comment = Comment.find(params[:id])
-    @tweet.comments.update(comment_params)
+    @comment.update(comment_params)
     redirect_to tweet_path(@tweet)
   end
 
   def destroy
     @tweet = Tweet.find(params[:tweet_id])
     @comment = Comment.find(params[:id])
-    @tweet.comments.destroy
+    @comment.destroy
     redirect_to tweet_path(@tweet)
   end
 
