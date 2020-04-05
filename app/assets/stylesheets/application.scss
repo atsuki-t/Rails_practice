@@ -10,18 +10,26 @@
 button {
   margin-top: 10px;
   margin-left: 10px;
+  padding: 0;
+  border-color: black;
+  border-radius: 3px;
   a {
     color: black;
+    padding: 3px 8px;
+    text-decoration: none;
+    transition: 0.5s;
+    &:hover {
+      background: #000;
+      color: white;
+      text-decoration: none;
+    }
   }
 }
 .main {
   padding: 30px;
   button {
-    margin-top: 10px;
     margin-left: 0;
-    a {
-      color: black;
-    }
+    margin-right: 5px;
   }
   .error_message {
     color: red;
