@@ -13,4 +13,7 @@ class Tweet < ApplicationRecord
   belongs_to :user
 
   has_many :comments, dependent: :destroy, inverse_of: :tweet
+
+  validates :title, presence: true
+  validates :body, presence: true
 end

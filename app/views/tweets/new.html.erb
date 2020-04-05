@@ -1,4 +1,7 @@
 <h1>新規ツイート作成</h1>
+<% if @tweet.errors.any? %>
+  <p class="error_message">タイトルとツイートの両方を入力してください。</p>
+<% end %>
 
 <%= form_for @tweet do |f| %>
   <p>
