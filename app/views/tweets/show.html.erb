@@ -7,7 +7,12 @@
 
 <% @tweet.comments.each do |comment| %>
   <hr>
-  <p><%= comment.user.user_name %><span>： </span><%= comment.content %></p>
-  <button><%= link_to "編集", edit_tweet_comment_path(@tweet, comment.id) %></button>
-  <button><%= link_to "削除", tweet_comment_path(@tweet, comment.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
+  <% if comment.user_id =! 0 %>
+    <p><%= comment.user.user_name %><span>： </span><%= comment.content %></p>
+    <% if @user_name == comment.user.user_name %>
+    <button><%= link_to "編集", edit_tweet_comment_path(@tweet, comment.id) %></button>
+    <button><%= link_to "削除", tweet_comment_path(@tweet, comment.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
+  <% end %>
+  <% end %>
+  
 <% end %>

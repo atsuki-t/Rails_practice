@@ -24,4 +24,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :tweets
+
+  # validates :user_name, allow_nil: true
 end
