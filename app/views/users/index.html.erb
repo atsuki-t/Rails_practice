@@ -5,5 +5,7 @@
   <hr>
   <p><span>ユーザーネーム: </span><%= user.user_name %></p>
   <p><span>メールアドレス: </span><%= user.email %></p>
-  <button><%= link_to "詳細", user_path(user.id) %></button>
+  <% if @user == user.user_name %>
+    <button><%= link_to "詳細", user_path(user.id) %></button>
+  <% end %>
 <% end %>

@@ -7,10 +7,20 @@ class TweetsController < ApplicationController
 
   def show
     @user = @tweet.user
+    @user_name = if user_signed_in?
+                   current_user.user_name
+                 else
+                   'ゲスト'
+                 end
   end
 
   def index
     @tweets = Tweet.all.order(id: :DESC)
+    @user_name = if user_signed_in?
+                   current_user.user_name
+                 else
+                   'ゲスト'
+                 end
   end
 
   def create

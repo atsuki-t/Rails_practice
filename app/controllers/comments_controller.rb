@@ -11,7 +11,11 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = current_user.id
+    if user_signed_in?
+      @comment.user_id = current_user.id
+    else
+      @comment.user_id = 0
+    end
     @comment.save
     redirect_to tweet_path(@tweet)
   end

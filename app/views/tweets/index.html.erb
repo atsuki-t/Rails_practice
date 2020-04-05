@@ -2,11 +2,12 @@
 
 <% @tweets.each do |tweet| %>
   <hr>
-  <%# <p><span>ツイート内容: </span><%=link_to tweet.body, tweet_path(tweet.id)</p> %>
   <p><span>投稿者: </span><%= tweet.user.user_name %></p>
   <p><span>タイトル: </span><%= tweet.title %></p>
   <p><span>ツイート内容: </span><%= tweet.body %></p>
   <button><%= link_to "詳細", tweet_path(tweet.id) %></button>
-  <button><%= link_to "編集", edit_tweet_path(tweet.id) %></button>
-  <button><%= link_to "削除", tweet_path(tweet.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
+  <% if @user_name == tweet.user.user_name %>
+    <button><%= link_to "編集", edit_tweet_path(tweet.id) %></button>
+    <button><%= link_to "削除", tweet_path(tweet.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
+  <% end %>
 <% end %>
