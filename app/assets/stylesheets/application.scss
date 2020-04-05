@@ -7,7 +7,7 @@
     font-size: 18px;
   }
 }
-button {
+button, input {
   margin-top: 10px;
   margin-left: 10px;
   padding: 0;
@@ -25,9 +25,31 @@ button {
     }
   }
 }
+label {
+  margin-top: 12px;
+}
+input {
+  min-width: 50px;
+  transition: 0.5s;
+  &:hover {
+    background: #000;
+    color: white;
+  }
+}
+#tweet_title, #tweet_body, #comment_content, #user_user_name, #user_email, #user_password, #user_password_confirmation {
+  width: 400px;
+  color: black;
+  border: solid 1px;
+  margin-left: 10px;
+  outline: none;
+  &:hover {
+    background: #fff;
+    color: #000;
+  }
+}
 .main {
   padding: 30px;
-  button {
+  button, input {
     margin-left: 0;
     margin-right: 5px;
   }

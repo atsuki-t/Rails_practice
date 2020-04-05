@@ -1,16 +1,15 @@
 class CommentsController < ApplicationController
+  before_action :set_comment, only: %I[new edit create update destroy]
+
   def new
-    @tweet = Tweet.find(params[:tweet_id])
     @comment = Comment.new
   end
 
   def edit
-    @tweet = Tweet.find(params[:tweet_id])
     @comment = Comment.find(params[:id])
   end
 
   def create
-    @tweet = Tweet.find(params[:tweet_id])
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.save
@@ -18,20 +17,22 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @tweet = Tweet.find(params[:tweet_id])
     @comment = Comment.find(params[:id])
     @comment.update(comment_params)
     redirect_to tweet_path(@tweet)
   end
 
   def destroy
-    @tweet = Tweet.find(params[:tweet_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to tweet_path(@tweet)
   end
 
   private
+
+  def set_comment
+    @tweet = Tweet.find(params[:tweet_id])
+  end
 
   def comment_params
     params.require(:comment).permit(:content).merge(tweet_id: params[:tweet_id])
