@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :tweets do
-    resources :comments, only: %i[new edit create update destroy]
+    resources :comments, only: %I[new edit create update destroy]
+    resources :favorites, only: %I[create destroy]
   end
   resources :users
 
