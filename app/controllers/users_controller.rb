@@ -10,7 +10,9 @@ class UsersController < ApplicationController
             end
   end
 
-  def show; end
+  def show
+    @favorite_tweets = @user.favorite_tweets
+  end
 
   def edit; end
 
