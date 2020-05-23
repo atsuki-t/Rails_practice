@@ -3,6 +3,7 @@
 <hr>
 <p><span>ユーザーネーム: </span><%= @user.user_name %></p>
 <p><span>メールアドレス: </span><%= @user.email %></p>
+<p><span>自己紹介: </span><%= @user.introduction %></p>
 
 <button><%= link_to "編集", edit_user_path(@user.id) %></button>
 

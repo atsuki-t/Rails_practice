@@ -36,12 +36,22 @@
       <div class="other">
         <div class="other-container">
           <div>
+            <% if user_signed_in? %>
+            <h3><%= current_user.user_name %></h3>
+            <p><%= current_user.email %></p>
+            <p>aaa</p>
+            <p>aaa</p>
+            <% else %>
+            <h3>ゲスト</h3>
+            <% end %>
+          </div>
+          <div>
             <h3>おすすめニュース</h3>
-            <p>aaaabbbbcccc</p>
-            <p>aaaabbbbcccc</p>
-            <p>aaaabbbbcccc</p>
-            <p>aaaabbbbcccc</p>
-            <p>aaaabbbbcccc</p>
+            <p>aaaa</p>
+            <p>bbbb</p>
+            <p>cccc</p>
+            <p>dddd</p>
+            <p>eeee</p>
           </div>
         </div>
       </div>
