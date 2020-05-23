@@ -1,6 +1,6 @@
 @import "bootstrap";
 .header {
-  background: #000;
+  background: rgb(0, 132, 255);
   color: white;
   padding: 18px 10px 6px;
   p {
@@ -47,13 +47,48 @@ input {
     color: #000;
   }
 }
+.constitution {
+  display: flex;
+  background: rgb(244, 250, 255);
+}
+.side-menu {
+  width: 30%;
+  ul {
+    padding-left: 0;
+  }
+  li {
+    list-style: none;
+  }
+  .side-menu-container {
+    margin: 20px;
+    margin-left: 250px;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    height: 100vh;
+  }
+}
 .main {
-  padding: 30px;
+  width: 40%;
   button, input {
     margin-left: 0;
     margin-right: 5px;
   }
   .error_message {
     color: red;
+  }
+  .main-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+  }
+}
+.other {
+  width: 30%;
+  .other-container {
+    margin: 20px;
+    margin-right: 250px;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    height: 100vh;
   }
 }

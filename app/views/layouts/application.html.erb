@@ -11,18 +11,40 @@
 
   <body>
     <%= render "layouts/header" %>
-    <% if user_signed_in? %>
-      <button><%= link_to "新規投稿", new_tweet_path %></button>
-      <button><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} %></button>
-      <button><%= link_to "マイページ", user_path(current_user.id) %></button>
-    <% else %>
-      <button><%= link_to "新規登録", new_user_registration_path %></button>
-      <button><%= link_to "ログイン", new_user_session_path %></button>
-    <% end %>
-      <button><%= link_to "ツイート一覧", tweets_path %></button>
-      <button><%= link_to "ユーザー一覧", users_path %></button>
-    <div class="main">
-      <%= yield %>
+    <div class="constitution">
+      <div class="side-menu">
+        <div class="side-menu-container">
+          <ul>
+          <li><button><%= link_to "ツイート一覧", tweets_path %></button></li>
+          <li><button><%= link_to "ユーザー一覧", users_path %></button></li>
+          <% if user_signed_in? %>
+          <li><button><%= link_to "新規投稿", new_tweet_path %></button></li>
+          <li><button><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} %></button></li>
+          <li><button><%= link_to "マイページ", user_path(current_user.id) %></button></li>
+          <% else %>
+          <li><button><%= link_to "新規登録", new_user_registration_path %></button></li>
+          <li><button><%= link_to "ログイン", new_user_session_path %></button></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="main">
+        <div class="main-container">
+          <%= yield %>
+        </div>
+      </div>
+      <div class="other">
+        <div class="other-container">
+          <div>
+            <h3>おすすめニュース</h3>
+            <p>aaaabbbbcccc</p>
+            <p>aaaabbbbcccc</p>
+            <p>aaaabbbbcccc</p>
+            <p>aaaabbbbcccc</p>
+            <p>aaaabbbbcccc</p>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
