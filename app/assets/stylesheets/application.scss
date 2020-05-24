@@ -1,10 +1,17 @@
 @import "bootstrap";
 .header {
-  background: #000;
+  background: rgb(60, 138, 255);
   color: white;
-  padding: 18px 10px 6px;
+  padding: 20px 30px 4px;
+  position: fixed;
+  width: 100%;
+  top: 0;
   p {
-    font-size: 18px;
+    font-size: 22px;
+  }
+  i {
+    color: white;
+    padding-right: 10px;
   }
 }
 button, input {
@@ -19,10 +26,44 @@ button, input {
     text-decoration: none;
     transition: 0.5s;
     &:hover {
-      background: #000;
-      color: white;
+      color: black;
+      background: rgb(220, 241, 255);
       text-decoration: none;
     }
+  }
+}
+.menu-button {
+  font-size: 22px;
+  border: 1px solid white;
+  margin-bottom: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  border-radius: 10px;
+  padding: 7px 8px;
+  &:hover {
+    background: rgb(220, 241, 255);
+    color: rgb(60, 138, 255);
+    a {
+      background: rgb(220, 241, 255);
+      color: rgb(60, 138, 255);
+    }
+    i {
+      color: rgb(60, 138, 255);
+    }
+  }
+  a {
+    color: black;
+    padding: 0 0;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 7px 8px;
+    &:hover {
+      background: rgb(220, 241, 255);
+      color: rgb(60, 138, 255);
+    }
+  }
+  i {
+    color: #000;
   }
 }
 label {
@@ -36,7 +77,8 @@ input {
     color: white;
   }
 }
-#tweet_title, #tweet_body, #comment_content, #user_user_name, #user_email, #user_password, #user_password_confirmation {
+#tweet_title, #tweet_body, #comment_content, #user_user_name,
+#user_email, #user_password,#user_introduction , #user_password_confirmation {
   width: 400px;
   color: black;
   border: solid 1px;
@@ -47,8 +89,56 @@ input {
     color: #000;
   }
 }
+body {
+  background: rgb(244, 250, 255);
+}
+.constitution {
+  display: flex;
+  margin: 0 auto;
+  width: 1100px;
+  padding-top: 73px;
+}
+.side-menu {
+  width: 28%;
+  ul {
+    padding-left: 0;
+  }
+  li {
+    list-style: none;
+  }
+  .side-menu-container {
+    margin: 20px;
+    margin-left: 20px;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border: solid 1px black;
+    border-radius: 10px;
+    height: calc(100vh - 113px);
+    position: relative;
+    .new-post {
+      position: absolute;
+      bottom: 20px;
+      background: rgb(60, 138, 255);
+      border-radius: 20px;
+      &:hover {
+        background: rgb(87, 154, 255);
+        color: #fff;
+        a {
+          background: rgb(87, 154, 255);
+          color: #fff;
+        }
+      }
+      a {
+        padding: 0 50px;
+        color: #fff;
+      }
+    }
+  }
+}
 .main {
-  padding: 30px;
+  width: 44%;
+  overflow: auto;
+  height: calc(100vh - 73px);
   button, input {
     margin-left: 0;
     margin-right: 5px;
@@ -56,4 +146,40 @@ input {
   .error_message {
     color: red;
   }
+  .main-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border: solid 1px black;
+    border-radius: 10px;
+  }
+}
+.other {
+  width: 28%;
+  overflow: auto;
+  height: calc(100vh - 73px);
+  .other-container {
+    margin: 20px;
+    margin-right: 20px;
+    .user {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: rgb(255, 255, 255);
+      border: solid 1px black;
+      border-radius: 10px;
+    }
+    .news {
+      padding: 20px;
+      background: rgb(255, 255, 255);
+      border: solid 1px black;
+      border-radius: 10px;
+    }
+  }
+}
+i {
+  color: rgb(197, 197, 197);
+}
+.favorite {
+  color: red;
 }

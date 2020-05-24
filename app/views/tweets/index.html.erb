@@ -13,12 +13,13 @@
   <p>
   <% if user_signed_in? %>
     <% if tweet.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
-        <p><span>お気に入り解除: </span><%=link_to tweet.favorites.count, tweet_favorite_path(id: tweet.id, tweet_id: tweet.id), method: :delete %></p>
+      <p><span><i class="fas fa-heart favorite"></i> </span><%=link_to tweet.favorites.count, tweet_favorite_path(id: tweet.id, tweet_id: tweet.id), method: :delete %>
     <% else %>
-        <p><span>お気に入り登録: </span><%=link_to tweet.favorites.count, tweet_favorites_path(tweet.id), method: :post %></p>
+      <p><span><i class="fas fa-heart notfavorite"></i> </span><%=link_to tweet.favorites.count, tweet_favorites_path(tweet.id), method: :post %>
     <% end %>
   <% else %>
-    <p><span>お気に入り数: </span><%= tweet.favorites.count %></p>
+    <p><span><i class="fas fa-heart notfavorite"></i> </span><%= tweet.favorites.count %>
   <% end %>
+  <span>　<i class="far fa-comment"></i> </span><%=link_to tweet.comments.count, tweet_path(tweet.id) %></p>
   </p>
 <% end %>

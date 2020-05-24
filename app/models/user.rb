@@ -5,6 +5,7 @@
 #  id                     :bigint           not null, primary key
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(255)      default(""), not null
+#  introduction           :string(255)
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string(255)
@@ -26,6 +27,8 @@ class User < ApplicationRecord
   has_many :tweets
   has_many :favorites
   has_many :favorite_tweets, through: :favorites, source: :tweet
+
+  # validates :introduction, allow_nil: true
 
   # validates :user_name, allow_nil: true
 end
