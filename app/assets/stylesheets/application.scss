@@ -71,7 +71,7 @@ input {
   }
 }
 .main {
-  width: 40%;
+  width: 35%;
   button, input {
     margin-left: 0;
     margin-right: 5px;
@@ -88,11 +88,10 @@ input {
   }
 }
 .other {
-  width: 30%;
+  width: 35%;
   .other-container {
     margin: 20px;
     margin-right: 45%;
-    height: 100vh;
     .user {
       margin-bottom: 20px;
       padding: 20px;
