@@ -3,6 +3,9 @@
   background: rgb(0, 132, 255);
   color: white;
   padding: 20px 30px 4px;
+  position: fixed;
+  width: 100%;
+  top: 0;
   p {
     font-size: 22px;
   }
@@ -23,6 +26,40 @@ button, input {
       color: white;
       text-decoration: none;
     }
+  }
+}
+.menu-button {
+  font-size: 22px;
+  border: 1px solid white;
+  margin-bottom: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  border-radius: 10px;
+  padding: 7px 8px;
+  &:hover {
+    background: rgb(220, 241, 255);
+    color: rgb(60, 138, 255);
+    a {
+      background: rgb(220, 241, 255);
+      color: rgb(60, 138, 255);
+    }
+    i {
+      color: rgb(60, 138, 255);
+    }
+  }
+  a {
+    color: black;
+    padding: 0 0;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 7px 8px;
+    &:hover {
+      background: rgb(220, 241, 255);
+      color: rgb(60, 138, 255);
+    }
+  }
+  i {
+    color: #000;
   }
 }
 label {
@@ -48,12 +85,17 @@ input {
     color: #000;
   }
 }
-.constitution {
-  display: flex;
+body {
   background: rgb(244, 250, 255);
 }
+.constitution {
+  display: flex;
+  margin: 0 auto;
+  width: 1100px;
+  padding-top: 73px;
+}
 .side-menu {
-  width: 30%;
+  width: 28%;
   ul {
     padding-left: 0;
   }
@@ -62,16 +104,18 @@ input {
   }
   .side-menu-container {
     margin: 20px;
-    margin-left: 45%;
+    margin-left: 20px;
     padding: 20px;
     background: rgb(255, 255, 255);
-    height: 100vh;
     border: solid 1px black;
     border-radius: 10px;
+    height: calc(100vh - 113px);
   }
 }
 .main {
-  width: 35%;
+  width: 44%;
+  overflow: auto;
+  height: calc(100vh - 73px);
   button, input {
     margin-left: 0;
     margin-right: 5px;
@@ -81,6 +125,7 @@ input {
   }
   .main-container {
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 20px;
     background: rgb(255, 255, 255);
     border: solid 1px black;
@@ -88,10 +133,12 @@ input {
   }
 }
 .other {
-  width: 35%;
+  width: 28%;
+  overflow: auto;
+  height: calc(100vh - 73px);
   .other-container {
     margin: 20px;
-    margin-right: 45%;
+    margin-right: 20px;
     .user {
       margin-bottom: 20px;
       padding: 20px;
