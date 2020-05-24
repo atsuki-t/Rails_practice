@@ -62,10 +62,12 @@ input {
   }
   .side-menu-container {
     margin: 20px;
-    margin-left: 250px;
+    margin-left: 45%;
     padding: 20px;
     background: rgb(255, 255, 255);
     height: 100vh;
+    border: solid 1px black;
+    border-radius: 10px;
   }
 }
 .main {
@@ -81,22 +83,34 @@ input {
     margin-top: 20px;
     padding: 20px;
     background: rgb(255, 255, 255);
+    border: solid 1px black;
+    border-radius: 10px;
   }
 }
 .other {
   width: 30%;
   .other-container {
     margin: 20px;
-    margin-right: 250px;
+    margin-right: 45%;
     height: 100vh;
     .user {
       margin-bottom: 20px;
       padding: 20px;
       background: rgb(255, 255, 255);
+      border: solid 1px black;
+      border-radius: 10px;
     }
     .news {
       padding: 20px;
       background: rgb(255, 255, 255);
+      border: solid 1px black;
+      border-radius: 10px;
     }
   }
+}
+i {
+  color: rgb(197, 197, 197);
+}
+.favorite {
+  color: red;
 }
