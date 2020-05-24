@@ -36,7 +36,8 @@ input {
     color: white;
   }
 }
-#tweet_title, #tweet_body, #comment_content, #user_user_name, #user_email, #user_password, #user_password_confirmation {
+#tweet_title, #tweet_body, #comment_content, #user_user_name,
+#user_email, #user_password,#user_introduction , #user_password_confirmation {
   width: 400px;
   color: black;
   border: solid 1px;
@@ -87,8 +88,15 @@ input {
   .other-container {
     margin: 20px;
     margin-right: 250px;
-    padding: 20px;
-    background: rgb(255, 255, 255);
     height: 100vh;
+    .user {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: rgb(255, 255, 255);
+    }
+    .news {
+      padding: 20px;
+      background: rgb(255, 255, 255);
+    }
   }
 }

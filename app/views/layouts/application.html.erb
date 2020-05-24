@@ -35,17 +35,16 @@
       </div>
       <div class="other">
         <div class="other-container">
-          <div>
+          <div class="user">
             <% if user_signed_in? %>
             <h3><%= current_user.user_name %></h3>
             <p><%= current_user.email %></p>
-            <p>aaa</p>
-            <p>aaa</p>
+            <p><%= current_user.introduction %></p>
             <% else %>
             <h3>ゲスト</h3>
             <% end %>
           </div>
-          <div>
+          <div class="news">
             <h3>おすすめニュース</h3>
             <p>aaaa</p>
             <p>bbbb</p>

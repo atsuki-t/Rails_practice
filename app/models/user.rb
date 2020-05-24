@@ -28,5 +28,7 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :favorite_tweets, through: :favorites, source: :tweet
 
+  # validates :introduction, allow_nil: true
+
   # validates :user_name, allow_nil: true
 end
