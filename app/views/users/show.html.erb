@@ -2,7 +2,7 @@
 
 <hr>
 <div class="user-flex">
-  <p class="user-image"><%= image_tag @user.avatar.url %></p>
+  <p class="user-image"><%= image_tag current_user.avatar.url %></p>
   <div>
     <p class="user-name"><%= @user.user_name %></p>
     <p class="user-email"><%= @user.email %></p>

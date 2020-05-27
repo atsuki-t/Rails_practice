@@ -3,8 +3,13 @@
 <p><%= @user %>でログインしています。</p>
 <% @users.each do |user| %>
   <hr>
-  <p><span>ユーザーネーム: </span><%= user.user_name %></p>
-  <p><span>メールアドレス: </span><%= user.email %></p>
+  <div class="user-flex">
+    <p class="user-image2"><%= image_tag user.avatar.url %></p>
+    <div class="user-mini-form">
+      <p class="name"><%= user.user_name %></p>
+      <p class="email"><%= user.email %></p>
+    </div>
+  </div>
   <% if @user == user.user_name %>
     <button><%= link_to "詳細", user_path(user.id) %></button>
   <% end %>

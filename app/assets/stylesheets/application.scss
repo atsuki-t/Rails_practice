@@ -195,10 +195,27 @@ i {
       border-radius: 50%;
     }
   }
+  .user-image2 {
+    padding-right: 10px;
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
   .user-image-form {
-    width: 70%;
     #user_avatar {
       width: 300px;
+    }
+  }
+  .user-mini-form {
+    p {
+      margin-bottom: 0;
+    }
+    .name {
+      padding-top: 4px;
+      font-weight: bold;
+      font-size: 18px;
     }
   }
   .user-name {
