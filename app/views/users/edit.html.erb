@@ -5,11 +5,13 @@
     <%= f.label :user_name,"ユーザーネーム" %>
     <%= f.text_field :user_name %>
   </p>
-  <p><%= image_tag current_user.avatar.url %></p>
-  <p>
-    <%= f.label :avatar,"画像" %>
-    <%= f.file_field :avatar %>
-  </p>
+  <div class="user-flex">
+    <p class="user-image"><%= image_tag current_user.avatar.url %></p>
+    <p class="user-image-form">
+      <%= f.label :avatar,"画像" %>
+      <%= f.file_field :avatar %>
+    </p>
+  </div>
   <p>
     <%= f.label :email,"メールアドレス" %>
     <%= f.text_field :email %>

@@ -184,3 +184,26 @@ i {
 .favorite {
   color: red;
 }
+.user-flex {
+  display: flex;
+  padding-top: 15px;
+  .user-image {
+    width: 30%;
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+  }
+  .user-image-form {
+    width: 70%;
+    #user_avatar {
+      width: 300px;
+    }
+  }
+  .user-name {
+    padding-top: 18px;
+    font-weight: bold;
+    font-size: 24px;
+  }
+}

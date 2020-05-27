@@ -1,8 +1,13 @@
 <h1><%= @user.user_name %>のマイページ</h1>
 
 <hr>
-<p><span>ユーザーネーム: </span><%= @user.user_name %></p>
-<p><span>メールアドレス: </span><%= @user.email %></p>
+<div class="user-flex">
+  <p class="user-image"><%= image_tag @user.avatar.url %></p>
+  <div>
+    <p class="user-name"><%= @user.user_name %></p>
+    <p class="user-email"><%= @user.email %></p>
+  </div>
+</div>
 <p><span>自己紹介: </span><%= @user.introduction %></p>
 
 <button><%= link_to "編集", edit_user_path(@user.id) %></button>
