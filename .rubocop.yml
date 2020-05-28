@@ -28,3 +28,7 @@ MethodLength:
 # 1ブロックあたりの行数の長さ
 Metrics/BlockLength:
   Max: 50  # 最大行数
+
+# 数字の区切り
+Style/NumericLiterals:
+  MinDigits: 100  #最小桁数

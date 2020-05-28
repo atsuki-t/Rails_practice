@@ -78,7 +78,8 @@ input {
   }
 }
 #tweet_title, #tweet_body, #comment_content, #user_user_name,
-#user_email, #user_password,#user_introduction , #user_password_confirmation {
+#user_email, #user_password, #user_introduction, #user_password_confirmation,
+#user_avatar {
   width: 400px;
   color: black;
   border: solid 1px;
@@ -182,4 +183,44 @@ i {
 }
 .favorite {
   color: red;
+}
+.user-flex {
+  display: flex;
+  padding-top: 15px;
+  .user-image {
+    width: 30%;
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+  }
+  .user-image2 {
+    padding-right: 10px;
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+  .user-image-form {
+    #user_avatar {
+      width: 300px;
+    }
+  }
+  .user-mini-form {
+    p {
+      margin-bottom: 0;
+    }
+    .name {
+      padding-top: 4px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+  .user-name {
+    padding-top: 18px;
+    font-weight: bold;
+    font-size: 24px;
+  }
 }

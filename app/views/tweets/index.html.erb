@@ -2,7 +2,13 @@
 
 <% @tweets.each do |tweet| %>
   <hr>
-  <p><span>投稿者: </span><%= tweet.user.user_name %></p>
+  <div class="user-flex">
+    <p class="user-image2"><%= image_tag tweet.user.avatar.url %></p>
+    <div class="user-mini-form">
+      <p class="name"><%= tweet.user.user_name %></p>
+      <p class="email"><%= tweet.user.email %></p>
+    </div>
+  </div>
   <p><span>タイトル: </span><%= tweet.title %></p>
   <p><span>ツイート内容: </span><%= tweet.body %></p>
   <button><%= link_to "詳細", tweet_path(tweet.id) %></button>

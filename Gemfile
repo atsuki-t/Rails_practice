@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server
-gem 'puma', '>= 4.3.4'
+gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '>= 4.0.0.beta2.1'
 gem 'devise'
 gem 'jquery-rails'
+gem 'paperclip', '~> 5.0.0'
 gem 'popper_js', '>= 1.12.3'
 gem 'solargraph'
 gem 'tether-rails'
