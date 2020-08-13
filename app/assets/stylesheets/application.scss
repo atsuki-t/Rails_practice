@@ -79,7 +79,7 @@ input {
 }
 #tweet_title, #tweet_body, #comment_content, #user_user_name,
 #user_email, #user_password, #user_introduction, #user_password_confirmation,
-#user_avatar {
+#user_image {
   width: 400px;
   color: #666666;
   border: solid 1px;
@@ -202,7 +202,7 @@ i {
     }
   }
   .user-image-form {
-    #user_avatar {
+    #user_image {
       width: 300px;
     }
   }

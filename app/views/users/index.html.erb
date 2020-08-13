@@ -4,7 +4,9 @@
 <% @users.each do |user| %>
   <hr>
   <div class="user-flex">
-    <p class="user-image2"><%= image_tag user.avatar.url %></p>
+    <% if user.image != nil %>
+      <p class="user-image2"><%= image_tag user.image.url %></p>
+    <% end %>
     <div class="user-mini-form">
       <p class="name"><%= user.user_name %></p>
       <p class="email"><%= user.email %></p>

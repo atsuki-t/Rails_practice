@@ -38,7 +38,7 @@
           <div class="user">
             <% if user_signed_in? %>
             <div class="user-flex">
-              <p class="user-image2"><%= image_tag current_user.avatar.url %></p>
+              <p class="user-image2"><%= image_tag current_user.image.url %></p>
               <div class="user-mini-form">
                 <p class="name"><%= current_user.user_name %></p>
                 <p class="email"><%= current_user.email %></p>

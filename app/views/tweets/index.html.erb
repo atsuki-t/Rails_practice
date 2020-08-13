@@ -3,7 +3,7 @@
 <% @tweets.each do |tweet| %>
   <hr>
   <div class="user-flex">
-    <p class="user-image2"><%= image_tag tweet.user.avatar.url %></p>
+    <p class="user-image2"><%= image_tag tweet.user.image.url %></p>
     <div class="user-mini-form">
       <p class="name"><%= tweet.user.user_name %></p>
       <p class="email"><%= tweet.user.email %></p>

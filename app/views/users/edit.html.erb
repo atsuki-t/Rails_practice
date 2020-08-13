@@ -6,10 +6,10 @@
     <%= f.text_field :user_name %>
   </p>
   <div class="user-flex">
-    <p class="user-image"><%= image_tag current_user.avatar.url %></p>
+    
     <p class="user-image-form">
-      <%= f.label :avatar,"画像" %>
-      <%= f.file_field :avatar %>
+      <%= f.label :image,"画像" %>
+      <%= f.file_field :image %>
     </p>
   </div>
   <p>
