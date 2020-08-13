@@ -32,6 +32,9 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :favorite_tweets, through: :favorites, source: :tweet
 
+  validates :user_name, presence: true
+  validates :email, presence: true
+
   # 画像ファイルのサイズ指定、デフォルトでは /missing.png を使用
   has_attached_file :avatar, system: { medium: '300x300>', thumb: '100x100>' }, default_url: '/initial_image.jpg'
 

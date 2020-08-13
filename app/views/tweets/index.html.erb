@@ -19,13 +19,13 @@
   <p>
   <% if user_signed_in? %>
     <% if tweet.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
-      <p><span><i class="fas fa-heart favorite"></i> </span><%=link_to tweet.favorites.count, tweet_favorite_path(id: tweet.id, tweet_id: tweet.id), method: :delete %>
+      <p><span><%=link_to "❤️", tweet_favorite_path(id: tweet.id, tweet_id: tweet.id), method: :delete %></span><%= tweet.favorites.count %>
     <% else %>
-      <p><span><i class="fas fa-heart notfavorite"></i> </span><%=link_to tweet.favorites.count, tweet_favorites_path(tweet.id), method: :post %>
+      <p><span><%=link_to "🤍", tweet_favorites_path(tweet.id), method: :post %></span><%= tweet.favorites.count %>
     <% end %>
   <% else %>
-    <p><span><i class="fas fa-heart notfavorite"></i> </span><%= tweet.favorites.count %>
+    <p><span>🤍</span><%= tweet.favorites.count %>
   <% end %>
-  <span>　<i class="far fa-comment"></i> </span><%=link_to tweet.comments.count, tweet_path(tweet.id) %></p>
+  <span><%=link_to "💬", tweet_path(tweet.id) %></span><%= tweet.comments.count %></p>
   </p>
 <% end %>
