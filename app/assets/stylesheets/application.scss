@@ -18,7 +18,7 @@ button, input {
   margin-top: 10px;
   margin-left: 10px;
   padding: 0;
-  border-color: black;
+  border: black solid 1px;
   border-radius: 3px;
   a {
     color: black;
@@ -81,7 +81,7 @@ input {
 #user_email, #user_password, #user_introduction, #user_password_confirmation,
 #user_avatar {
   width: 400px;
-  color: black;
+  color: #666666;
   border: solid 1px;
   margin-left: 10px;
   outline: none;
@@ -92,6 +92,7 @@ input {
 }
 body {
   background: rgb(244, 250, 255);
+  color: #666666;
 }
 .constitution {
   display: flex;
