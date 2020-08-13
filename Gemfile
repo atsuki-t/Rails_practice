@@ -22,7 +22,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'carrierwave'
+gem 'rmagick'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -30,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '>= 4.0.0.beta2.1'
 gem 'devise'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'paperclip', '~> 5.2.0'
 gem 'popper_js', '>= 1.12.3'
 gem 'solargraph'

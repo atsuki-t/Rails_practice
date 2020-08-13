@@ -18,7 +18,7 @@ button, input {
   margin-top: 10px;
   margin-left: 10px;
   padding: 0;
-  border-color: black;
+  border: black solid 1px;
   border-radius: 3px;
   a {
     color: black;
@@ -79,9 +79,9 @@ input {
 }
 #tweet_title, #tweet_body, #comment_content, #user_user_name,
 #user_email, #user_password, #user_introduction, #user_password_confirmation,
-#user_avatar {
+#user_image {
   width: 400px;
-  color: black;
+  color: #666666;
   border: solid 1px;
   margin-left: 10px;
   outline: none;
@@ -92,6 +92,7 @@ input {
 }
 body {
   background: rgb(244, 250, 255);
+  color: #666666;
 }
 .constitution {
   display: flex;
@@ -181,9 +182,6 @@ body {
 i {
   color: rgb(197, 197, 197);
 }
-.favorite {
-  color: red;
-}
 .user-flex {
   display: flex;
   padding-top: 15px;
@@ -204,7 +202,7 @@ i {
     }
   }
   .user-image-form {
-    #user_avatar {
+    #user_image {
       width: 300px;
     }
   }

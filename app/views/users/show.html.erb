@@ -1,8 +1,8 @@
-<h1><%= @user.user_name %>のマイページ</h1>
+<h2><%= @user.user_name %>のマイページ</h2>
 
 <hr>
 <div class="user-flex">
-  <p class="user-image"><%= image_tag current_user.avatar.url %></p>
+  <p class="user-image"><%= image_tag @user.image.url %></p>
   <div>
     <p class="user-name"><%= @user.user_name %></p>
     <p class="user-email"><%= @user.email %></p>
@@ -10,7 +10,9 @@
 </div>
 <p><span>自己紹介: </span><%= @user.introduction %></p>
 
-<button><%= link_to "編集", edit_user_path(@user.id) %></button>
+<% if current_user == @user %>
+  <button><%= link_to "編集", edit_user_path(@user.id) %></button>
+<% end %>
 
 <% @favorite_tweets.each do |tweet| %>
   <hr>
