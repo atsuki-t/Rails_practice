@@ -1,4 +1,4 @@
-<h2>ツイート編集</h2>
+<h2><%= link_to "← ", tweets_path, class: "before_page" %>ツイート編集</h2>
 
 <%= form_for @tweet do |f| %>
   <p>
@@ -11,5 +11,3 @@
   </p>
   <%= f.submit '更新'%>
 <% end %>
-
-<button><%= link_to "戻る", tweets_path %></button>

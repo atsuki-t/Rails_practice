@@ -1,4 +1,4 @@
-<h2><%= @user.user_name %>のマイページ</h2>
+<h2><%= link_to "← ", users_path, class: "before_page" %><%= @user.user_name %>のマイページ</h2>
 
 <hr>
 <div class="user-flex">
