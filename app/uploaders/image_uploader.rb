@@ -39,7 +39,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # 日付で保存
   def filename
-    super.chomp(File.extname(super)) + '.jpg'
+    super.chomp(File.extname(super)) + '.jpg' if original_filename.present?
     time = Time.now
     name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
     name.downcase

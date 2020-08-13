@@ -2,7 +2,13 @@
 
 <hr>
 <div class="user-flex">
-  <p class="user-image"><%= image_tag @user.image.url %></p>
+  <p class="user-image">
+    <% if @user.image.present? %>
+      <%= image_tag @user.image.url %>
+    <% else %>
+      <%= image_tag "initial_image.jpg", size: "60x60", class: "rounded-circle" %>
+    <% end %>
+  </p>
   <div>
     <p class="user-name"><%= @user.user_name %></p>
     <p class="user-email"><%= @user.email %></p>
