@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '>= 4.0.0.beta2.1'
 gem 'devise'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'paperclip', '~> 5.2.0'
 gem 'popper_js', '>= 1.12.3'
 gem 'solargraph'
