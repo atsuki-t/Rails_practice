@@ -20,6 +20,8 @@
   <button><%= link_to "編集", edit_user_path(@user.id) %></button>
 <% end %>
 
+<%= render partial: "layouts/tweet", locals: {tweets: @tweets} %>
+
 <% @favorite_tweets.each do |tweet| %>
   <hr>
   <p><span>ファボツイート内容: </span><%=link_to tweet.body, tweet_path(tweet.id) %></p>

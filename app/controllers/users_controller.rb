@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @favorite_tweets = @user.favorite_tweets
+    @tweets = @user.tweets.reverse
   end
 
   def edit; end
