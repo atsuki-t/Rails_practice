@@ -37,7 +37,7 @@ button, input {
   border: 1px solid white;
   margin-bottom: 10px;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.4s;
   border-radius: 10px;
   padding: 7px 8px;
   &:hover {
@@ -55,7 +55,7 @@ button, input {
     color: black;
     padding: 0 0;
     text-decoration: none;
-    transition: 0.3s;
+    transition: 0.4s;
     padding: 7px 8px;
     &:hover {
       background: rgb(220, 241, 255);
@@ -220,5 +220,15 @@ i {
     padding-top: 18px;
     font-weight: bold;
     font-size: 24px;
+  }
+}
+.before_page {
+  text-decoration: none;
+  font-weight: 200;
+  margin-right: 10px;
+  border-radius: 50%;
+  transition: 0.4s;
+  &:hover {
+    background: rgb(220, 241, 255);
   }
 }

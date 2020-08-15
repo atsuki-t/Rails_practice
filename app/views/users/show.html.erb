@@ -1,8 +1,14 @@
-<h2><%= @user.user_name %>のマイページ</h2>
+<h2><%= link_to "← ", users_path, class: "before_page" %><%= @user.user_name %>のマイページ</h2>
 
 <hr>
 <div class="user-flex">
-  <p class="user-image"><%= image_tag @user.image.url %></p>
+  <p class="user-image">
+    <% if @user.image.present? %>
+      <%= image_tag @user.image.url %>
+    <% else %>
+      <%= image_tag "initial_image.jpg", size: "60x60", class: "rounded-circle" %>
+    <% end %>
+  </p>
   <div>
     <p class="user-name"><%= @user.user_name %></p>
     <p class="user-email"><%= @user.email %></p>
@@ -13,6 +19,8 @@
 <% if current_user == @user %>
   <button><%= link_to "編集", edit_user_path(@user.id) %></button>
 <% end %>
+
+<%= render partial: "layouts/tweet", locals: {tweets: @tweets} %>
 
 <% @favorite_tweets.each do |tweet| %>
   <hr>

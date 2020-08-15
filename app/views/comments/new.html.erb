@@ -1,4 +1,4 @@
-<h2>コメント作成</h2>
+<h2><%= link_to "← ", tweet_path(@tweet.id), class: "before_page" %>コメント作成</h2>
 
 <%= form_for [@tweet, @comment] do |f| %>
   <p>

@@ -38,7 +38,13 @@
           <div class="user">
             <% if user_signed_in? %>
             <div class="user-flex">
-              <p class="user-image2"><%= image_tag current_user.image.url %></p>
+              <p class="user-image2">
+                <% if current_user.image.present? %>
+                  <%= image_tag current_user.image.url %>
+                <% else %>
+                  <%= image_tag "initial_image.jpg", size: "60x60", class: "rounded-circle" %>
+                <% end %>
+              </p>
               <div class="user-mini-form">
                 <p class="name"><%= current_user.user_name %></p>
                 <p class="email"><%= current_user.email %></p>
@@ -51,7 +57,7 @@
           </div>
           <div class="news">
             <h3>最近の話題</h3>
-            <a class="twitter-timeline" data-height="2000" href="https://twitter.com/YahooNewsTopics?ref_src=twsrc%5Etfw">Tweets by YahooNewsTopics</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" data-tweet-limit="10" href="https://twitter.com/YahooNewsTopics?ref_src=twsrc%5Etfw">Tweets by YahooNewsTopics</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
       </div>
