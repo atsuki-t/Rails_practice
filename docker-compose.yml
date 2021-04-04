@@ -1,0 +1,57 @@
+version: '3.7'
+
+services:
+  postgres:
+    container_name: database
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    image: postgres:12.4
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  rails: &app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    command: bin/rails server -b 0.0.0.0
+    container_name: rails
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    environment:
+      WEBPACKER_DEV_SERVER_HOST: webpack
+      TZ: Asia/Tokyo
+    links:
+      - postgres
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+      - node-modules:/app/node_modules
+    tty: true
+    stdin_open: true
+
+  webpack:
+    <<: *app
+    command: bin/webpack-dev-server
+    container_name: webpack
+    ports:
+      - 3035:3035
+    depends_on:
+      - rails
+    tty: false
+    stdin_open: false
+
+volumes:
+  bundle:
+    driver: local
+  node-modules:
+    driver: local
+  postgres-data:
+    driver: local
