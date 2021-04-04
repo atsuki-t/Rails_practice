@@ -1,25 +1,22 @@
-# README
+# myapp の説明
+Rails を用いた SNS 風の WEB アプリケーション
+仮のアプリ名：Rails Apprication
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+新規登録後にスレッドを立てることができ、全てのユーザーがコメントすることができる
+Twitter のようなもの
 
-Things you may want to cover:
+# 起動方法
+Docker 環境が必要
+- Mac の場合は Docker for Mac 、Windows の場合は Docker for Windows
 
-* Ruby version
+コンテナの作成と環境構築
+$ bin/devtool setup
 
-* System dependencies
+コンテナの起動
+$ bin/devtool start
 
-* Configuration
+http://localhost:3000 にアクセス
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# myapp
+# 初回のみ
+myapp-rails コンテナ内で以下のコマンドを入力
+$ bin/rails db:drop && bin/rails db:create && bin/rails db:migrate
