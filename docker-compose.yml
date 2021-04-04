@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   postgres:
-    container_name: database
+    container_name: myapp-postgres
     environment:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
@@ -18,7 +18,7 @@ services:
       dockerfile: Dockerfile
       target: development
     command: bin/rails server -b 0.0.0.0
-    container_name: rails
+    container_name: myapp-rails
     depends_on:
       - postgres
     env_file:
@@ -40,7 +40,7 @@ services:
   webpack:
     <<: *app
     command: bin/webpack-dev-server
-    container_name: webpack
+    container_name: myapp-webpack
     ports:
       - 3035:3035
     depends_on:
