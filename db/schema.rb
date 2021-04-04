@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_08_13_131120) do
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tweet_id"
     t.string "content"
@@ -20,14 +23,14 @@ ActiveRecord::Schema.define(version: 2020_08_13_131120) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tweet_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "tweets", force: :cascade do |t|
     t.string "body"
     t.string "title"
     t.integer "user_id"
@@ -35,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_131120) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "user_name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

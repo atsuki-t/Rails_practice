@@ -3,7 +3,7 @@
 # Table name: comments
 #
 #  id         :bigint           not null, primary key
-#  content    :string(255)
+#  content    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  tweet_id   :integer

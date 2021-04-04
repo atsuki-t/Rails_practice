@@ -70,7 +70,6 @@ cmd_setup() {
     print_exec docker-compose build
     print_exec docker-compose run --rm rails yarn install
     print_exec docker-compose run --rm rails bundle install
-    print_exec docker-compose run --rm rails bundle exec db:migrate
 }
 
 cmd_update() {
