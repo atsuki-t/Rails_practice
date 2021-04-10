@@ -1,1 +1,1 @@
-$("#like-<%= @tweet.id %>").html("<%= j(render partial: 'layouts/tweet', locals: { tweet: @tweet }) %>");
+$("#like-<%= @tweet.id %>").html("<%= j(render partial: 'layouts/favorite', locals: { tweet: @tweet }) %>");
