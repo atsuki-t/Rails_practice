@@ -1,14 +1,16 @@
-<p id="like-<%= tweet.id %>">
-  <% if user_signed_in? %>
-    <% if tweet.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
-      <span class="mr-2"><%=link_to "❤️ ", tweet_favorite_path(id: tweet.id, tweet_id: tweet.id), class: "text-decoration-none heart", method: :delete, remote: true %></span>
+<div id="like-<%= tweet.id %>">
+  <p class="pt-2">
+    <% if user_signed_in? %>
+      <% if tweet.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
+        <span class="mr-2"><%=link_to "❤️ ", tweet_favorite_path(id: tweet.id, tweet_id: tweet.id), class: "text-decoration-none heart", method: :delete, remote: true %></span>
+      <% else %>
+        <span class="mr-2"><%=link_to "🤍 ", tweet_favorites_path(tweet.id), class: "text-decoration-none heart", method: :post, remote: true %></span>
+      <% end %>
     <% else %>
-      <span class="mr-2"><%=link_to "🤍 ", tweet_favorites_path(tweet.id), class: "text-decoration-none heart", method: :post, remote: true %></span>
+      <span class="mr-2">🤍</span>
     <% end %>
-  <% else %>
-    <span class="mr-2">🤍</span>
-  <% end %>
-  <%= tweet.favorites.count %>
-  <span class="ml-4 mr-2"><%=link_to "💬 ", tweet_path(tweet.id), class: "text-decoration-none" %></span>
-  <%= tweet.comments.count %>
-</p>
+    <%= tweet.favorites.count %>
+    <span class="ml-4 mr-2"><%=link_to "💬 ", tweet_path(tweet.id), class: "text-decoration-none" %></span>
+    <%= tweet.comments.count %>
+  </p>
+</div>
