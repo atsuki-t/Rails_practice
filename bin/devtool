@@ -70,6 +70,10 @@ cmd_setup() {
     print_exec docker-compose build
     print_exec docker-compose run --rm rails yarn install
     print_exec docker-compose run --rm rails bundle install
+    print_exec docker-compose run --rm rails bundle install
+    print_exec docker-compose run --rm rails bin/rails db:drop
+    print_exec docker-compose run --rm rails bin/rails db:create
+    print_exec docker-compose run --rm rails bin/rails db:migrate
 }
 
 cmd_update() {
@@ -81,7 +85,7 @@ cmd_update() {
     print_exec docker-compose build
     print_exec docker-compose run --rm rails yarn install
     print_exec docker-compose run --rm rails bundle install
-    print_exec docker-compose run --rm rails bundle exec rake ridgepole:apply
+    print_exec docker-compose run --rm rails bin/rails db:migrate
 }
 
 cmd_start() {
