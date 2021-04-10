@@ -1,35 +1,23 @@
-<% tweets.each do |tweet| %>
-  <hr>
-  <div class="user-flex">
-    <p class="user-image2">
-      <% if tweet.user.image.present? %>
-        <%= image_tag tweet.user.image.url %>
-      <% else %>
-        <%= image_tag "initial_image.jpg", size: "60x60", class: "rounded-circle" %>
-      <% end %>
-    </p>
-    <div class="user-mini-form">
-      <p class="name"><%= tweet.user.user_name %></p>
-      <p class="email"><%= tweet.user.email %></p>
-    </div>
-  </div>
-  <p><span>タイトル: </span><%= tweet.title %></p>
-  <p><span>ツイート内容: </span><%= tweet.body %></p>
-  <button><%= link_to "詳細", tweet_path(tweet.id) %></button>
-  <% if @user_name == tweet.user.user_name %>
-    <button><%= link_to "編集", edit_tweet_path(tweet.id) %></button>
-    <button><%= link_to "削除", tweet_path(tweet.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
-  <% end %>
-  <p>
-  <% if user_signed_in? %>
-    <% if tweet.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
-      <p><span class="mr-2"><%=link_to "❤️ ", tweet_favorite_path(id: tweet.id, tweet_id: tweet.id), class: "text-decoration-none heart", method: :delete %></span><%= tweet.favorites.count %>
+<hr>
+<div class="user-flex">
+  <p class="user-image2">
+    <% if tweet.user.image.present? %>
+      <%= image_tag tweet.user.image.url %>
     <% else %>
-      <p><span class="mr-2"><%=link_to "🤍 ", tweet_favorites_path(tweet.id), class: "text-decoration-none heart", method: :post %></span><%= tweet.favorites.count %>
+      <%= image_tag "initial_image.jpg", size: "60x60", class: "rounded-circle" %>
     <% end %>
-  <% else %>
-    <p><span class="mr-2">🤍 </span><%= tweet.favorites.count %>
-  <% end %>
-  <span class="ml-4 mr-2"><%=link_to "💬 ", tweet_path(tweet.id), class: "text-decoration-none" %></span><%= tweet.comments.count %></p>
   </p>
+  <div class="user-mini-form">
+    <p class="name"><%= tweet.user.user_name %></p>
+    <p class="email"><%= tweet.user.email %></p>
+  </div>
+</div>
+<p><span>タイトル: </span><%= tweet.title %></p>
+<p><span>ツイート内容: </span><%= tweet.body %></p>
+<button><%= link_to "詳細", tweet_path(tweet.id) %></button>
+<% if @user_name == tweet.user.user_name %>
+  <button><%= link_to "編集", edit_tweet_path(tweet.id) %></button>
+  <button><%= link_to "削除", tweet_path(tweet.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
 <% end %>
+<%# いいね機能 %>
+<%= render partial: "layouts/favorite", locals: {tweet: tweet} %>
