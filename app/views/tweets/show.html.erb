@@ -3,9 +3,6 @@
 <p><span>投稿者: </span><%= link_to @user.user_name, user_path(@user.id) %></p>
 <p><span>タイトル: </span><%= @tweet.title %></p>
 <p><span>ツイート内容: </span><%= @tweet.body %></p>
-<% if user_signed_in? %>
-  <button><%= link_to "コメントする", new_tweet_comment_path(@tweet) %></button>
-<% end %>
 
 <% @tweet.comments.each do |comment| %>
   <hr>
@@ -13,5 +10,13 @@
   <% if @user_name == comment.user.user_name %>
     <button><%= link_to "編集", edit_tweet_comment_path(@tweet, comment.id) %></button>
     <button><%= link_to "削除", tweet_comment_path(@tweet, comment.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
+  <% end %>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= form_for [@tweet, @comment] do |f| %>
+    <hr>
+    <%= f.text_field :content, class: "mx-0" %>
+    <%= f.submit "コメントする" %>
   <% end %>
 <% end %>

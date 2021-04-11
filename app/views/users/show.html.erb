@@ -26,5 +26,5 @@
 
 <% @favorite_tweets.each do |tweet| %>
   <hr>
-  <p><span>ファボツイート内容: </span><%=link_to tweet.body, tweet_path(tweet.id) %></p>
+  <p><span>お気に入りのツイート: </span><%=link_to tweet.title, tweet_path(tweet.id) %></p>
 <% end %>
