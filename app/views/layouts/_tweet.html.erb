@@ -14,10 +14,10 @@
 </div>
 <p><span>タイトル: </span><%= tweet.title %></p>
 <p><span>ツイート内容: </span><%= tweet.body %></p>
-<button><%= link_to "詳細", tweet_path(tweet.id) %></button>
+<button class="button"><%= link_to "詳細", tweet_path(tweet.id) %></button>
 <% if @user_name == tweet.user.user_name %>
-  <button><%= link_to "編集", edit_tweet_path(tweet.id) %></button>
-  <button><%= link_to "削除", tweet_path(tweet.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
+  <button class="button"><%= link_to "編集", edit_tweet_path(tweet.id) %></button>
+  <button class="button"><%= link_to "削除", tweet_path(tweet.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
 <% end %>
 <%# いいね機能 %>
 <%= render partial: "layouts/favorite", locals: {tweet: tweet} %>

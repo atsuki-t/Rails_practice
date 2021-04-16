@@ -17,8 +17,8 @@
     </div>
   </div>
   <p><%= user.introduction %></p>
-  <button><%= link_to "詳細", user_path(user.id) %></button>
+  <button class="button"><%= link_to "詳細", user_path(user.id) %></button>
   <% if @user == user.user_name %>
-    <button><%= link_to "編集", edit_user_path(user.id) %></button>
+    <button class="button"><%= link_to "編集", edit_user_path(user.id) %></button>
   <% end %>
 <% end %>
