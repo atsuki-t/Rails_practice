@@ -7,13 +7,36 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(
-  user_name: "ユーザー1",
-  email: "a@a",
-  introduction: "初めまして、よろしく"
+  user_name: "admin",
+  email: "admin@example.com",
+  introduction: "admin user です。",
+  password: "password"
 )
-User.each.all do |user|
+User.create!(
+  user_name: "user1",
+  email: "user1@example.com",
+  introduction: "user1 です。",
+  password: "password"
+)
+User.create!(
+  user_name: "user2",
+  email: "user2@example.com",
+  introduction: "user2 です。",
+  password: "password"
+)
+User.all.each do |user|
   user.tweets.create!(
-    body: "晴れでした",
-    title: "今日の天気"
+    title: "はじめまして、#{user.user_name} です。",
+    body: "よろしくお願いします。"
   )
 end
+Comment.create!(
+  user_id: 2,
+  tweet_id: 1,
+  content: "よろしくね。"
+)
+Comment.create!(
+  user_id: 3,
+  tweet_id: 1,
+  content: "よろしくね。"
+)
