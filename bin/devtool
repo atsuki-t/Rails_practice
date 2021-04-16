@@ -74,6 +74,7 @@ cmd_setup() {
     print_exec docker-compose run --rm rails bin/rails db:drop
     print_exec docker-compose run --rm rails bin/rails db:create
     print_exec docker-compose run --rm rails bin/rails db:migrate
+    print_exec docker-compose run --rm rails bin/rails db:seed
 }
 
 cmd_update() {
