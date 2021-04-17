@@ -1,0 +1,10 @@
+<h2>メモ一覧</h2>
+<button class="button"><%= link_to "新規作成", new_memo_path %></button>
+<% @memos.each do |memo| %>
+  <hr>
+  <p><span>タイトル: </span><%= memo.title %></p>
+  <p><span>内容: </span><%= memo.content %></p>
+  <button class="button"><%= link_to "詳細", memo_path(memo.id) %></button>
+  <button class="button"><%= link_to "編集", edit_memo_path(memo.id) %></button>
+  <button class="button"><%= link_to "削除", memo_path(memo.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
+<% end %>

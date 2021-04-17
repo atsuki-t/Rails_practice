@@ -1,0 +1,13 @@
+<h2><%= link_to "← ", memos_path, class: "before_page" %>メモの作成</h2>
+
+<%= form_for @memo do |f| %>
+  <p>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content, "内容" %>
+    <%= f.text_area :content %>
+  </p>
+  <%= f.submit "作成", class: "button" %>
+<% end %>

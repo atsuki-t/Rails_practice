@@ -23,6 +23,8 @@ class TweetsController < ApplicationController
                    'ゲスト'
                  end
   end
+  
+  def edit; end
 
   def create
     @tweet = Tweet.new(tweet_params)
@@ -33,8 +35,6 @@ class TweetsController < ApplicationController
       render new_tweet_path
     end
   end
-
-  def edit; end
 
   def update
     @tweet.update(tweet_params)

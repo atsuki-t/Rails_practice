@@ -1,0 +1,6 @@
+<h2><%= link_to "← ", memos_path, class: "before_page" %>メモ</h2>
+
+<p><span>タイトル: </span><%= @memo.title %></p>
+<p><span>内容: </span><%= @memo.content %></p>
+<button class="button"><%= link_to "編集", edit_memo_path(@memo.id) %></button>
+<button class="button"><%= link_to "削除", memo_path(@memo.id), method: :delete, data: {confirm: "本当に削除しますか？"} %></button>
