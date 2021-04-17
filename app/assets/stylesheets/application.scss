@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "./button.scss";
+
 .header {
   background: linear-gradient(45deg, #006eff, #05FBFF);
   color: white;
@@ -34,38 +36,6 @@ a {
       color: black;
       background: rgb(220, 241, 255);
     }
-  }
-}
-.menu-button {
-  font-size: 22px;
-  border: none;
-  margin-bottom: 10px;
-  transition: 0.4s;
-  border-radius: 10px;
-  padding: 7px 8px;
-  &:hover {
-    background: rgb(220, 241, 255);
-    color: rgb(60, 138, 255);
-    a {
-      background: rgb(220, 241, 255);
-      color: rgb(60, 138, 255);
-    }
-    i {
-      color: rgb(60, 138, 255);
-    }
-  }
-  a {
-    color: black;
-    padding: 0 0;
-    transition: 0.4s;
-    padding: 7px 8px;
-    &:hover {
-      background: rgb(220, 241, 255);
-      color: rgb(60, 138, 255);
-    }
-  }
-  i {
-    color: #000;
   }
 }
 label {
@@ -110,23 +80,6 @@ body {
     border: solid 1px gray;
     height: calc(100vh - 113px);
     position: relative;
-    .new-post {
-      position: absolute;
-      bottom: 20px;
-      background: linear-gradient(#05FBFF, #006eff);
-      border-radius: 20px;
-      font-size: 22px;
-      border: none;
-      margin-bottom: 10px;
-      padding: 7px 8px;
-      &:hover {
-        background: linear-gradient(#05dbdf, #005cd4);
-      }
-      a {
-        padding: 0 50px;
-        color: #fff;
-      }
-    }
   }
 }
 .main {

@@ -1,0 +1,81 @@
+.side-button {
+  width: 100%;
+  padding: 0;
+  display: block;
+  background: linear-gradient(to right, #51baff 50%, #fff 50%);
+  background-size: 200% 100.5%;
+  background-position: right bottom;
+  border: none;
+  border-left: 0.30em solid #51baff;
+  box-shadow: 3px 3px 2px rgba(0,0,0,0.08);
+  transition: all .5s ease-out;
+  &:hover {
+    background-position: left bottom;
+    a {
+      color: white;
+      transition: .5s;
+    }
+    i {
+      color: white;
+      transition: .5s;
+    }
+  }
+  a {
+    display: block;
+    color: black;
+    padding: 10px 0px;
+    width: 100%;
+    transition: .5s;
+  }
+  i {
+    color: black;
+    transition: .5s;
+  }
+}
+
+.create-tweet {
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
+  background: #2b98ff;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  transition: 800ms ease all;
+  outline: none;
+  box-shadow: 3px 3px 2px rgba(0,0,0,0.08);
+  a {
+    text-align: center;
+    display: block;
+    color: white;
+    padding: 10px 0;
+  }
+  &:hover{
+    transition: 800ms ease all;
+    background: #fff;
+    a {
+      transition: 800ms ease all;
+      color: #2b98ff;
+    }
+  }
+  &:before, &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #2b98ff;
+    transition: 400ms ease all;
+  }
+  &:after{
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+  &:hover:before, &:hover:after{
+    width: 100%;
+    transition: 800ms ease all;
+  }
+}
