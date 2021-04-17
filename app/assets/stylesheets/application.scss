@@ -176,3 +176,26 @@ i {
     background: rgb(220, 241, 255);
   }
 }
+.memo {
+  border: #000 solid 1px;
+  padding: 20px;
+  margin: 20px 0px;
+  background: white;
+  box-shadow: 6px 6px 7px -1px rgb(157, 157, 157);
+}
+.btn-circle {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .35);
+  transition: all .3s;
+  &:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .35);
+  }
+  i {
+    padding-top: 10px;
+    color: black;
+  }
+}
