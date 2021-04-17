@@ -12,6 +12,7 @@ class TweetsController < ApplicationController
                  else
                    'ゲスト'
                  end
+    @comment = Comment.new
   end
 
   def index

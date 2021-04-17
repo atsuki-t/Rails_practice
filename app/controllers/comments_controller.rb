@@ -1,9 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %I[new edit create update destroy]
-
-  def new
-    @comment = Comment.new
-  end
+  before_action :set_comment, only: %I[edit create update destroy]
 
   def edit
     @comment = Comment.find(params[:id])
