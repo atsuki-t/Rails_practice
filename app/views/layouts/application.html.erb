@@ -47,7 +47,7 @@
                 <% end %>
               </p>
               <div class="user-mini-form">
-                <p class="name"><%= current_user.user_name %></p>
+                <p class="name"><%= link_to current_user.user_name, current_user %></p>
                 <p class="email"><%= current_user.email %></p>
               </div>
             </div>

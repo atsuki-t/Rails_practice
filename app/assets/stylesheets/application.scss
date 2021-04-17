@@ -14,6 +14,12 @@
     padding-right: 10px;
   }
 }
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
 .button {
   margin-top: 10px;
   margin-left: 10px;
@@ -23,12 +29,10 @@
   a {
     color: black;
     padding: 3px 8px;
-    text-decoration: none;
     transition: 0.5s;
     &:hover {
       color: black;
       background: rgb(220, 241, 255);
-      text-decoration: none;
     }
   }
 }
@@ -36,7 +40,6 @@
   font-size: 22px;
   border: none;
   margin-bottom: 10px;
-  text-decoration: none;
   transition: 0.4s;
   border-radius: 10px;
   padding: 7px 8px;
@@ -54,7 +57,6 @@
   a {
     color: black;
     padding: 0 0;
-    text-decoration: none;
     transition: 0.4s;
     padding: 7px 8px;
     &:hover {
@@ -116,13 +118,11 @@ body {
       font-size: 22px;
       border: none;
       margin-bottom: 10px;
-      text-decoration: none;
       padding: 7px 8px;
       &:hover {
         background: linear-gradient(#05dbdf, #005cd4);
       }
       a {
-        text-decoration: none;
         padding: 0 50px;
         color: #fff;
       }
@@ -212,13 +212,11 @@ i {
   }
 }
 .before_page {
-  text-decoration: none;
   font-weight: 200;
   margin-right: 10px;
   border-radius: 50%;
   transition: 0.4s;
   &:hover {
     background: rgb(220, 241, 255);
-    text-decoration: none;
   }
 }

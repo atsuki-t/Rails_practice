@@ -1,6 +1,18 @@
 <h2><%= link_to "← ", tweets_path, class: "before_page" %>ツイート内容</h2>
 
-<p><span>投稿者: </span><%= link_to @user.user_name, user_path(@user.id) %></p>
+<div class="user-flex">
+  <p class="user-image2">
+    <% if @tweet.user.image.present? %>
+      <%= image_tag @tweet.user.image.url %>
+    <% else %>
+      <%= image_tag "initial_image.jpg", size: "60x60", class: "rounded-circle" %>
+    <% end %>
+  </p>
+  <div class="user-mini-form">
+    <p class="name"><%= link_to @tweet.user.user_name, @tweet.user %></p>
+    <p class="email"><%= @tweet.user.email %></p>
+  </div>
+</div>
 <p><span>タイトル: </span><%= @tweet.title %></p>
 <p><span>ツイート内容: </span><%= @tweet.body %></p>
 
