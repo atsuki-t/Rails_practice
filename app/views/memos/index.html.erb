@@ -10,6 +10,6 @@
         <%= link_to memo_path(memo.id), class: "btn-circle", method: :delete, data: {confirm: "本当に削除しますか？"} do %><i class="fas fa-trash"></i><% end %>
       </div>
     </div>
-    <p class="m-0"><%= memo.content %></p>
+    <pre class="m-0"><%= memo.content %></pre>
   </div>
 <% end %>
