@@ -1,0 +1,13 @@
+<h2><%= link_to "← ", memos_path, class: "before_page" %>メモの作成</h2>
+
+<%= form_for @memo do |f| %>
+  <div class="row mx-0 my-3">
+    <%= f.label :title, "タイトル", class: "col-3 p-0 m-0" %>
+    <%= f.text_field :title, class: "col-9" %>
+  </div>
+  <div class="row mx-0 mb-3">
+    <%= f.label :content, "内容", class: "col-3 p-0 m-0" %>
+    <%= f.text_area :content, class: "col-9 px-2", rows: "10" %>
+  </div>
+  <%= f.submit "作成", class: "button" %>
+<% end %>

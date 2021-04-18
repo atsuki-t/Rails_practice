@@ -86,14 +86,18 @@ body {
   width: 44%;
   overflow: auto;
   height: calc(100vh - 73px);
-  button, input {
+  .button {
     margin-left: 0;
     margin-right: 5px;
+  }
+  input {
+    padding: 0px 8px;
   }
   .error_message {
     color: red;
   }
   .main-container {
+    min-height: calc(100vh - 113px);
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 20px;
@@ -103,7 +107,6 @@ body {
 }
 .other {
   width: 28%;
-  overflow: auto;
   height: calc(100vh - 73px);
   .other-container {
     margin: 20px;
@@ -117,6 +120,8 @@ body {
     .news {
       padding: 20px;
       background: rgba(255, 255, 255, 0.8);
+      overflow: auto;
+      max-height: calc(100vh - 306px);
       border: solid 1px gray;
     }
   }
@@ -171,5 +176,28 @@ i {
   transition: 0.4s;
   &:hover {
     background: rgb(220, 241, 255);
+  }
+}
+.memo {
+  border: #000 solid 1px;
+  padding: 20px;
+  margin: 20px 0px;
+  background: white;
+  box-shadow: 6px 6px 7px -1px rgb(157, 157, 157);
+}
+.btn-circle {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .35);
+  transition: all .3s;
+  &:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .35);
+  }
+  i {
+    padding-top: 10px;
+    color: black;
   }
 }

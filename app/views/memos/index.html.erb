@@ -1,0 +1,15 @@
+<h2>メモ一覧</h2>
+
+<% @memos.each do |memo| %>
+  <hr>
+  <div class="memo">
+    <div class="row mb-4">
+      <div class="col-9 pr-0"><h3><%= memo.title %></h3></div>
+      <div class="col-3 p-0">
+        <%= link_to edit_memo_path(memo.id), class: "btn-circle mx-2" do %><i class="fas fa-pen-nib"></i><% end %>
+        <%= link_to memo_path(memo.id), class: "btn-circle", method: :delete, data: {confirm: "本当に削除しますか？"} do %><i class="fas fa-trash"></i><% end %>
+      </div>
+    </div>
+    <pre class="m-0"><%= memo.content %></pre>
+  </div>
+<% end %>
