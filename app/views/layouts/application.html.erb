@@ -19,7 +19,8 @@
             <li><button class="side-button mb-3"><%= link_to tweets_path do %><i class="fas fa-home mr-2"></i>ツイート 一覧<% end %></button></li>
             <li><button class="side-button mb-3"><%= link_to users_path do %><i class="fas fa-user mr-2"></i>ユーザー 一覧<% end %></button></li>
             <% if user_signed_in? %>
-              <li><button class="side-button mb-3"><%= link_to memos_path do %><i class="far fa-sticky-note mr-2"></i></i>メモ帳<% end %></button></li>
+              <li><button class="side-button mb-3"><%= link_to memos_path do %><i class="far fa-sticky-note mr-2"></i>メモ帳<% end %></button></li>
+              <li><button class="side-button mb-3"><%= link_to favorites_path do %><i class="far fa-thumbs-up mr-2"></i>お気に入り<% end %></button></li>
               <li><button class="side-button mb-3"><%= link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %><i class="fas fa-sign-out-alt mr-2"></i>ログアウト<% end %></button></li>
               <li><button class="side-button mb-3"><%= link_to user_path(current_user.id) do %><i class="far fa-address-card mr-2"></i>マイページ<% end %></button></li>
             <% else %>

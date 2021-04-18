@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
+
   resources :tweets do
     resources :comments, only: %I[new edit create update destroy]
     resources :favorites, only: %I[create destroy]
   end
+  get 'favorites', to: 'favorites#index'
+
   resources :users
   resources :memos
 

@@ -1,10 +1,10 @@
 class FavoritesController < ApplicationController
+  def index
+    @tweets = current_user.favorite_tweets
+  end
+
   def create
-    # こう記述することで、「current_userに関連したFavoriteクラスの新しいインスタンス」が作成可能。
-    # つまり、favorite.user_id = current_user.idが済んだ状態で生成されている。
-    # buildはnewと同じ意味で、アソシエーションしながらインスタンスをnewする時に形式的に使われる。
-    favorite = current_user.favorites.build(tweet_id: params[:tweet_id])
-    favorite.save
+    favorite = current_user.favorites.create(tweet_id: params[:tweet_id])
     @tweet = favorite.tweet
   end
 
