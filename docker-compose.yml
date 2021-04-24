@@ -47,6 +47,15 @@ services:
       - rails
     tty: false
     stdin_open: false
+    
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins
+    ports:
+      - 8888:8080
+    volumes:
+      - ./jenkins:/jenkins_home
+    tty: true
 
 volumes:
   bundle:
