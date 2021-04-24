@@ -1,6 +1,9 @@
 {
   "name": "myapp",
   "private": true,
+  "scripts": {
+    "test": "eslint *.js"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -9,6 +12,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "eslint": "^7.25.0",
     "webpack-dev-server": "^3.10.3"
   }
 }
