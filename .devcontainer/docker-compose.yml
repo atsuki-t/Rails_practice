@@ -31,7 +31,7 @@ services:
     volumes:
       - ..:/rails-practice:delegated
       - ../vendor/bundle:/usr/local/bundle
-      - ../node-modules:/rails-practice/node_modules
+      - ../node_modules:/rails-practice/node_modules
     tty: true
     stdin_open: true
 
