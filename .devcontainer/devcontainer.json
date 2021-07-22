@@ -1,0 +1,10 @@
+{
+	"name": "rails-practice",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "rails",
+	"workspaceFolder": "/rails-practice",
+	"extensions": [
+		"editorconfig.editorconfig",
+		"esbenp.prettier-vscode"
+	]
+}

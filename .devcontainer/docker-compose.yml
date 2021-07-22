@@ -16,13 +16,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: development
     command: bin/rails server -b 0.0.0.0
     container_name: myapp-rails
     depends_on:
       - postgres
     env_file:
-      - .env
+      - ../.env
     environment:
       WEBPACKER_DEV_SERVER_HOST: webpack
       TZ: Asia/Tokyo
@@ -31,9 +30,9 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - .:/app
+      - .:/rails-practice
       - bundle:/usr/local/bundle
-      - node-modules:/app/node_modules
+      - node-modules:/rails-practice/node_modules
     tty: true
     stdin_open: true
 
