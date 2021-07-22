@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   postgres:
-    container_name: myapp-postgres
+    container_name: postgres
     environment:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
@@ -16,8 +16,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: bin/rails server -b 0.0.0.0
-    container_name: myapp-rails
+    container_name: rails
     depends_on:
       - postgres
     env_file:
@@ -30,22 +29,11 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - .:/rails-practice
-      - bundle:/usr/local/bundle
-      - node-modules:/rails-practice/node_modules
+      - ..:/rails-practice:delegated
+      - ../vendor/bundle:/usr/local/bundle
+      - ../node-modules:/rails-practice/node_modules
     tty: true
     stdin_open: true
-
-  webpack:
-    <<: *app
-    command: bin/webpack-dev-server
-    container_name: myapp-webpack
-    ports:
-      - 3035:3035
-    depends_on:
-      - rails
-    tty: false
-    stdin_open: false
 
 volumes:
   bundle:

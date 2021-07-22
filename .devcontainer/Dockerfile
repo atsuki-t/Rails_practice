@@ -1,4 +1,4 @@
-FROM node:12.18.4-alpine as node
+FROM node:14-alpine as node
 
 FROM ruby:2.7.3-alpine
 
@@ -15,6 +15,7 @@ RUN apk add --update --no-cache \
   bash \
   npm \
   less \
+  libc6-compat \
   postgresql-dev \
   imagemagick \
   openssl \
@@ -36,5 +37,3 @@ RUN update-ms-fonts \
   && rm -rf /var/cache/*
 
 EXPOSE 3000
-
-CMD ["bin/rails", "server", "-b", "0.0.0.0"]
