@@ -8,14 +8,8 @@ default: &default
 
 development:
   <<: *default
+  host: postgres
+  port: 5432
   database: myapp_development
-
-test:
-  <<: *default
-  database: myapp_test
-
-production:
-  <<: *default
-  database: myapp_production
-  username: myapp
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  username: POSTGRES_USER
+  password: POSTGRES_PASSWORD

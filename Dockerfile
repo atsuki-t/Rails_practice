@@ -3,6 +3,8 @@ FROM ruby:3.0.2
 
 WORKDIR /workspace
 
+RUN apt-get update && apt-get install -y npm
+
 COPY /Gemfile /workspace/Gemfile
 COPY /Gemfile.lock /workspace/Gemfile.lock
 COPY /package.json /workspace/package.json
