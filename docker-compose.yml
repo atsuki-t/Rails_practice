@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  rails:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rails
+    depends_on:
+      - postgres
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/workspace:delegated
+      - bundle:/workspace/vendor/bundle
+      - node_modules:/workspace/node_modules
+    tty: true
+    stdin_open: true
+  postgres:
+    container_name: postgres
+    image: postgres:12.4
+    environment:
+      POSTGRES_USER: POSTGRES_USER
+      POSTGRES_PASSWORD: POSTGRES_PASSWORD
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  bundle:
+    driver: local
+  node_modules:
+    driver: local
+  postgres_data:
+    driver: local
