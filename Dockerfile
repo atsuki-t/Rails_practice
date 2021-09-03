@@ -1,11 +1,17 @@
-FROM ruby:2.7.3
-
-COPY Gemfile /workspace/Gemfile
-COPY Gemfile.lock /workspace/Gemfile.lock
+FROM node:14-alpine as node
+FROM ruby:3.0.2
 
 WORKDIR /workspace
+
+COPY /Gemfile /workspace/Gemfile
+COPY /Gemfile.lock /workspace/Gemfile.lock
+COPY /package.json /workspace/package.json
+COPY /yarn.lock /workspace/yarn.lock
 
 RUN gem install bundler -v "2.2.25"
 RUN bundle install
 
-ENTRYPOINT ["bash", "-c", "bundle exec rails db:create db:migrate db:seed && bundle exec rails server"]
+RUN npm update
+RUN npm install -g npm yarn@1.22.5
+
+RUN yarn install
