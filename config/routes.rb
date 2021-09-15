@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :favorites, only: %I[create destroy]
   end
   get 'favorites', to: 'favorites#index'
+  get 'admin', to: 'admin#index'
 
   resources :users
   resources :memos
