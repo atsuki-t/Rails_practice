@@ -5,7 +5,7 @@ class CreateUserRoles < ActiveRecord::Migration[6.0]
       t.references :role, foreign_key: true, null: false
       t.timestamps
 
-      t.index [:user_id, :role_id], unique: true
+      t.index %i[user_id role_id], unique: true
     end
   end
 end

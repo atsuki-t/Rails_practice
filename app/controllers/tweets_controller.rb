@@ -23,7 +23,7 @@ class TweetsController < ApplicationController
                    'ゲスト'
                  end
   end
-  
+
   def edit; end
 
   def create
