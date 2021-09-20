@@ -6,13 +6,13 @@ class Ability
   def initialize(user)
     user ||= User.new
 
-    if user.roles.include?(:admin)
+    if user.admin?
       can :manage, :all
       can :access_admin_page, :all
-    elsif user.roles.include?(:manager)
+    elsif user.manager?
       can :manage, :all
       cannot :access_admin_page, :all
-    elsif user.roles.include?(:read_only)
+    elsif user.read_only?
       can :read, :all
       cannot :access_admin_page, :all
     else

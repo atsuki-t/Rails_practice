@@ -35,4 +35,16 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   mount_uploader :image, ImageUploader
+
+  def admin?
+    self.roles.include?(Role.find_by(name: 'admin'))
+  end
+
+  def manager?
+    self.roles.include?(Role.find_by(name: 'manager'))
+  end
+
+  def read_only?
+    self.roles.include?(Role.find_by(name: 'read_only'))
+  end
 end
