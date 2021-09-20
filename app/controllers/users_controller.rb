@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %I[show edit update]
+  authorize_resource
 
   def index
     @users = User.all

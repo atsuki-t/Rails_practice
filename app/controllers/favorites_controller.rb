@@ -1,4 +1,6 @@
 class FavoritesController < ApplicationController
+  authorize_resource
+
   def index
     @tweets = current_user.favorite_tweets
   end

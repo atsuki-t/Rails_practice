@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %I[edit create update destroy]
+  authorize_resource
 
   def edit
     @comment = Comment.find(params[:id])

@@ -25,6 +25,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :user_roles
+  has_many :roles, through: :user_roles
   has_many :tweets
   has_many :favorites
   has_many :favorite_tweets, through: :favorites, source: :tweet
@@ -33,4 +35,16 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   mount_uploader :image, ImageUploader
+
+  def admin?
+    self.roles.include?(Role.find_by(name: 'admin'))
+  end
+
+  def manager?
+    self.roles.include?(Role.find_by(name: 'manager'))
+  end
+
+  def read_only?
+    self.roles.include?(Role.find_by(name: 'read_only'))
+  end
 end

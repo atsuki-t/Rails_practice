@@ -24,6 +24,15 @@ User.create!(
   introduction: "user2 です。",
   password: "password"
 )
+
+Role.create!(name: 'admin')
+Role.create!(name: 'manager')
+Role.create!(name: 'read_only')
+
+UserRole.create!(user_id: 1, role_id: 1)
+UserRole.create!(user_id: 2, role_id: 2)
+UserRole.create!(user_id: 3, role_id: 2)
+
 User.all.each do |user|
   user.tweets.create!(
     title: "はじめまして、#{user.user_name} です。",

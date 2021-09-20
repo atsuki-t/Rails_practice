@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # view
 gem 'bootstrap'
+gem 'cancancan'
 gem 'devise'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
@@ -47,16 +48,16 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem "awesome_print"
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
-  gem "awesome_print"
 end
 
 group :development do
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'binding_of_caller'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'

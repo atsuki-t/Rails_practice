@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: %I[show edit update destroy]
+  authorize_resource
 
   def new
     @tweet = Tweet.new
@@ -23,7 +24,7 @@ class TweetsController < ApplicationController
                    'ゲスト'
                  end
   end
-  
+
   def edit; end
 
   def create
